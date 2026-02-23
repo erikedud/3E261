@@ -31,17 +31,14 @@ class BlockInvisibleHongomorado
 class Bandera
 
 CatMario                   --|> Personaje
-
 BlockInvisible             --|> Block
 BlockPunzante              --|> Block
 BlockCat                   --|> Block
 BlockInvisibleHongomorado  --|> Block
-
 Block                      --|> Plataforma
 Suelo                      --|> Plataforma
 Tubo                       --|> Plataforma
 TuboTrampa                 --|> Tubo
-
 Trampa                     --|> Obstaculo
 BlockCat                   --|> Trampa
 BlockInvisibleHongomorado  --|> Trampa
@@ -50,24 +47,20 @@ NubeTrap                   --|> Trampa
 BlockPunzante              --|> Trampa
 HongoRojo                  --|> Trampa  
 HongoMorado                --|> Trampa        
-Estrella                   --|> Trampa
-TuboTrampa                 --|> Trampa
-CatVolador                 --|> Trampa
-
-Cebolla             --|> Enemigo
-CebollaPelo         --|> Enemigo
-Robot               --|> Enemigo
-CatVolador          --|> Enemigo
-Nubetrap            --|> Enemigo
-
-Rayo                --|> Proyectil
-CatVolador          --|> Proyectil
-
-HongoRojo           --|> PowerUp
-HongoMorado         --|> PowerUp
-Estrella            --|> PowerUp
-Moneda              --|> PowerUp
-
+Estrella --|> Trampa
+TuboTrampa --|> Trampa
+CatVolador --|> Trampa
+Cebolla --|> Enemigo
+CebollaPelo --|> Enemigo
+Robot --|> Enemigo
+CatVolador --|> Enemigo
+Nubetrap --|> Enemigo
+Rayo --|> Proyectil
+CatVolador --|> Proyectil
+HongoRojo --|> PowerUp
+HongoMorado --|> PowerUp
+Estrella --|> PowerUp
+Moneda --|> PowerUp
 
 CatMario     *-- Vida
 CatMario     *-- Puntuacion
@@ -76,9 +69,8 @@ Nivel        *-- Enemigo
 Nivel        *-- Trampa
 Nivel        *-- Checkpoint
 Nivel        *-- Bandera
-Enemigo      *-- Proyectil
 
-Personaje         0-- Trampa
+Personaje         0-- Trampa  
 Robot             0-- block
 CatMario          0-- PowerUp
 CatMario          0-- Moneda
