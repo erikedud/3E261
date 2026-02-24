@@ -78,15 +78,15 @@ Nivel        *-- Checkpoint
 Nivel        *-- Bandera
 Enemigo      *-- Proyectil
 
-Personaje         0-- Trampa
-Robot             0-- block
-CatMario          0-- PowerUp
-CatMario          0-- Moneda
-CatMario          0-- HongoRojo
-CatMario          0-- Checkpoint
-CatMario          0-- Trampa
-Robot             0-- Enemigo 
-TuboTrampa        0-- Enemigo
-BloqueInvisible   0-- Trampa
-CatMario          0-- Bandera
+Personaje         o-- Trampa
+Robot             o-- Block
+CatMario          o-- PowerUp
+CatMario          o-- Moneda
+CatMario          o-- HongoRojo
+CatMario          o-- Checkpoint
+CatMario          o-- Trampa
+Robot             o-- Enemigo 
+TuboTrampa        o-- Enemigo
+BloqueInvisible   o-- Trampa
+CatMario          o-- Bandera
 @enduml
