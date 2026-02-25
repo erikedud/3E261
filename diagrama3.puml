@@ -1,0 +1,95 @@
+@startuml DiagramaMario
+class Personaje
+class CatMario
+class Vida
+class Puntuacion
+class Nivel
+class Trampa
+class Plataforma
+class Block
+class BlockInvisible
+class BlockPunzante
+class Suelo
+class Tubo
+class TuboTrampa
+class Enemigo
+class Cebolla
+class CebollaPelo
+class Robot
+class Rayo
+class NubeTrap
+class BlockCat
+class Abismo
+class Checkpoint
+class PowerUp
+class HongoRojo
+class HongoMorado 
+class Estrella
+class Moneda
+class CatVolador
+class BlockInvisibleHongomorado
+class Bandera
+class CatTubo
+class Proyectil
+
+CatMario                   --|> Personaje
+
+BlockInvisible             --|> Block
+BlockPunzante              --|> Block
+BlockCat                   --|> Block
+BlockInvisibleHongomorado  --|> Block
+
+Block                      --|> Plataforma
+Suelo                      --|> Plataforma
+Tubo                       --|> Plataforma
+TuboTrampa                 --|> Tubo
+
+Trampa                     --|> Obstaculo
+BlockCat                   --|> Trampa
+BlockInvisibleHongomorado  --|> Trampa
+Abismo                     --|> Trampa
+NubeTrap                   --|> Trampa
+BlockPunzante              --|> Trampa
+HongoRojo                  --|> Trampa  
+HongoMorado                --|> Trampa        
+Estrella                   --|> Trampa
+TuboTrampa                 --|> Trampa
+CatVolador                 --|> Trampa
+
+Cebolla                    --|> Enemigo
+CebollaPelo                --|> Enemigo
+Robot                      --|> Enemigo
+CatVolador                 --|> Enemigo
+Nubetrap                   --|> Enemigo
+CatTubo                    --|> Enemigo
+
+Rayo                       --|> Proyectil
+CatVolador                 --|> Proyectil
+
+HongoRojo                  --|> PowerUp
+HongoMorado                --|> PowerUp
+Estrella                   --|> PowerUp
+Moneda                     --|> PowerUp
+
+
+Enemigo                   "1"   *-- "1"  Vida
+CatMario                  "1"   *-- "*"  Vida
+CatMario                  "1"   *-- "0"  Puntuacion
+Nivel                     "1"   *-- "*"  Plataforma
+Nivel                     "1"   *-- "20" Enemigo
+Nivel                     "1"   *-- "30" Trampa
+Nivel                     "1"   *-- "1"  Checkpoint
+Nivel                     "1"   *-- "1"  Bandera 
+
+BlockInvisibleHongomorado "1"   o-- "*" HongoMorado
+CatTubo                   "1"   o-- "1" Tubo 
+Personaje                 "1"   o-- "n" Trampa
+Robot                     "1"   o-- "1" Block
+CatMario                  "1"   o-- "0" PowerUp
+CatMario                  "1"   o-- "n" Moneda
+CatMario                  "1"   o-- "1" HongoMorado 
+CatMario                  "1"   o-- "1" HongoRojo
+CatMario                  "1"   o-- "1" Checkpoint
+CatMario                  "1"   o-- "1" Trampa
+CatMario                  "1"   o-- "1" Bandera
+@enduml
