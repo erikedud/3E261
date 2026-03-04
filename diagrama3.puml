@@ -1,6 +1,18 @@
 @startuml DiagramaMario
 class Personaje
-class CatMario
+class CatMario{
+-Vida vidas[]
+-Puntuacion puntuacion []
+-PowerUp powerup []
+
++muerte:usar(Trampa)
++muerte:Recoger(PowerUp)
++muerte:recoger(HongoMorado)
++muerte:recoger(HongoRojo)
++muerte:recoger(Estrella)
++muerte:inpactar(BlockPunzante)
+
+}
 class Vida
 class Puntuacion
 class Nivel
@@ -71,7 +83,6 @@ HongoMorado                --|> PowerUp
 Estrella                   --|> PowerUp
 Moneda                     --|> PowerUp
 
-
 Enemigo                   "1"   *-- "1"  Vida
 CatMario                  "1"   *-- "*"  Vida
 CatMario                  "1"   *-- "0"  Puntuacion
@@ -81,7 +92,7 @@ Nivel                     "1"   *-- "30" Trampa
 Nivel                     "1"   *-- "1"  Checkpoint
 Nivel                     "1"   *-- "1"  Bandera 
 
-BlockInvisibleHongomorado "1"   o-- "*" HongoMorado
+BlockInvisibleHongomorado "1"   o-- "*" HongoMorado 
 CatTubo                   "1"   o-- "1" Tubo 
 Personaje                 "1"   o-- "n" Trampa
 Robot                     "1"   o-- "1" Block
