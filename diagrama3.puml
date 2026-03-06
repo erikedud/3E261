@@ -4,6 +4,8 @@ class Usuario{
 -Control control
 +jugar()
 +Caminar(control)
++Saltar(control)
+
 }
 class Personaje{
 -CatMario catMario   
@@ -30,18 +32,18 @@ class Marcador{
 -Puntaje puntaje
 +
 }
-class Movimiento
+class Obstaculo
 class Control
 class Vida
 class Nivel{
--Plataforma plataformas[]
--Enemigo enemigos[]
--Trampa trampas[]
+-Plataforma plataformas []
+-Enemigo enemigos []
+-Trampa trampas []
+-Bandera bandera 
 -Checkpoint checkpoint
-
-
+-CatMario catMario
 }
-class Trampa
+class Trampa   
 class Plataforma
 class Block
 class BlockInvisible
@@ -52,7 +54,6 @@ class TuboTrampa{
 -CatTubo catTubo [1]
 -CatVolador catVolador[1]
 +Entrar ()
-
 }
 class Enemigo
 class Cebolla
@@ -69,14 +70,17 @@ class HongoMorado
 class Estrella
 class Moneda
 class CatVolador
-class BlockInvisibleHongomorado
+class BlockInvisibleHongomorado{
+-HongoMorado hongoMorado []   
++HongoMorado:Impactar(BlockInvisibleHongomorado)
+}
 class Bandera
 class CatTubo
 
 class Proyectil
 
 CatMario                   --|> Personaje
-
+Obstaculo                   --|> Plataforma
 BlockInvisible             --|> Block
 BlockPunzante              --|> Block
 BlockCat                   --|> Block
@@ -85,9 +89,9 @@ BlockInvisibleHongomorado  --|> Block
 Block                      --|> Plataforma
 Suelo                      --|> Plataforma
 Tubo                       --|> Plataforma
+Abismo                     --|> Plataforma
 TuboTrampa                 --|> Tubo
 
-Trampa                     --|> Obstaculo
 BlockCat                   --|> Trampa
 BlockInvisibleHongomorado  --|> Trampa
 BlockInvisible             --|> Trampa
@@ -99,6 +103,8 @@ HongoMorado                --|> Trampa
 Estrella                   --|> Trampa
 TuboTrampa                 --|> Trampa
 CatVolador                 --|> Trampa
+PowerUp                    --|> Trampa
+
 
 Cebolla                    --|> Enemigo
 CebollaPelo                --|> Enemigo
@@ -127,15 +133,15 @@ Nivel                     "1"   *-- "1"  Bandera
 Nivel                     "1"   *-- "n"  Obstaculo
 Nivel                     "1"   *-- "1"  CatMario
 
+
 Control                   "1"   o-- "1" CatMario
-Usuario                   "1"   o-- "1" CatMario
 Usuario                   "1"   o-- "1" Control
 BlockInvisibleHongomorado "1"   o-- "*" HongoMorado 
 CatTubo                   "1"   o-- "1" Tubo 
-Personaje                 "1"   o-- "n" Trampa
 Robot                     "1"   o-- "1" Block
 CatMario                  "1"   o-- "0" Item
 CatMario                  "1"   o-- "1" Checkpoint
 CatMario                  "1"   o-- "1" Trampa
-CatMario                  "1"   o-- "1" Bandera
+CatMario                  "1"   o-- "*" Plataforma
+
 @enduml
